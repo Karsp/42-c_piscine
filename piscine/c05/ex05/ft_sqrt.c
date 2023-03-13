@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 13:59:00 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/12 21:23:19 by daviles-         ###   ########.fr       */
+/*   Created: 2023/02/23 13:53:27 by daviles-          #+#    #+#             */
+/*   Updated: 2023/02/23 17:22:28 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	*ft_memset(void *b, int c, int len)
-{
-	unsigned char	value;
-	int				count;
-	char	*ptr;
 
-	ptr = b;
-	value = c;
-	count = 0;
-	while (ptr[count] != '\0' && count < len)
+int	ft_sqrt(int nb)
+{
+	int	count;
+
+	count = 1;
+	if (nb <= 0)
+		return (0);
+	if (nb == 1)
+		return (1);
+	while (count <= nb)
 	{
-		ptr[count] = value;
+		if (count * count == nb)
+			return (count);
 		count++;
 	}
-	return (b);
+	return (0);
 }
 /*
 #include<stdio.h>
-#include<string.h>
 
 int	main(void)
 {
-	char	str[] = "hola mundo";
+	int	nb;
 
-	printf("%s\n", ft_memset(str, '-', 3));
-	printf("%s\n", memset(str, '-', 3));
+	nb = 4;
+	printf("%d", ft_sqrt(nb));
 	return (0);
 }
 */

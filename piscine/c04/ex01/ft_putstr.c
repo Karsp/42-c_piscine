@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 13:59:00 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/12 21:23:19 by daviles-         ###   ########.fr       */
+/*   Created: 2023/02/20 12:28:50 by daviles-          #+#    #+#             */
+/*   Updated: 2023/02/20 12:32:43 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	*ft_memset(void *b, int c, int len)
-{
-	unsigned char	value;
-	int				count;
-	char	*ptr;
+#include<unistd.h>
 
-	ptr = b;
-	value = c;
-	count = 0;
-	while (ptr[count] != '\0' && count < len)
+void	ft_putstr(char *str)
+{
+	unsigned int	n;
+
+	n = 0;
+	while (str[n] != '\0')
 	{
-		ptr[count] = value;
-		count++;
+		write(1, &str[n], 1);
+		n++;
 	}
-	return (b);
 }
 /*
-#include<stdio.h>
-#include<string.h>
-
-int	main(void)
+int main(void)
 {
-	char	str[] = "hola mundo";
-
-	printf("%s\n", ft_memset(str, '-', 3));
-	printf("%s\n", memset(str, '-', 3));
+	char str[] = "asdasd";
+	ft_putstr(str);
 	return (0);
 }
 */

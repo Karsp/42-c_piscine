@@ -1,40 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 13:59:00 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/12 21:23:19 by daviles-         ###   ########.fr       */
+/*   Created: 2023/02/20 12:33:24 by daviles-          #+#    #+#             */
+/*   Updated: 2023/02/23 16:39:12 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	*ft_memset(void *b, int c, int len)
-{
-	unsigned char	value;
-	int				count;
-	char	*ptr;
+#include<unistd.h>
 
-	ptr = b;
-	value = c;
-	count = 0;
-	while (ptr[count] != '\0' && count < len)
+void	ft_putchar(int nb)
+{
+	write(1, &nb, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	char	c;
+
+	if (nb == -2147483648)
 	{
-		ptr[count] = value;
-		count++;
+		write(1, "-", 1);
+		write(1, "2", 1);
+		write(1, "147483648", 9);
 	}
-	return (b);
+	else if (nb < 0)
+	{
+		write(1, "-", 1);
+		ft_putnbr(nb * -1);
+	}
+	else if ((nb / 10) == 0)
+	{
+		c = nb + 48;
+		write(1, &c, 1);
+	}
+	else
+	{
+		ft_putnbr(nb / 10);
+		c = nb % 10 + 48;
+		write(1, &c, 1);
+	}
 }
 /*
-#include<stdio.h>
-#include<string.h>
-
 int	main(void)
 {
-	char	str[] = "hola mundo";
-
-	printf("%s\n", ft_memset(str, '-', 3));
-	printf("%s\n", memset(str, '-', 3));
+	ft_putnbr(-2147483648);
 	return (0);
+
 }
 */

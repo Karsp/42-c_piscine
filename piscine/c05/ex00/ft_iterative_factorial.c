@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 13:59:00 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/12 21:23:19 by daviles-         ###   ########.fr       */
+/*   Created: 2023/02/22 20:52:19 by daviles-          #+#    #+#             */
+/*   Updated: 2023/02/23 13:46:10 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	*ft_memset(void *b, int c, int len)
-{
-	unsigned char	value;
-	int				count;
-	char	*ptr;
+#include<unistd.h>
 
-	ptr = b;
-	value = c;
-	count = 0;
-	while (ptr[count] != '\0' && count < len)
+int	ft_iterative_factorial(int nb)
+{
+	int	count;
+
+	count = nb;
+	if (nb < 0)
+		return (0);
+	else if (nb < 2)
+		return (1);
+	else if (nb >= 2)
 	{
-		ptr[count] = value;
-		count++;
+		while (count > 1)
+		{
+			nb *= --count;
+		}
 	}
-	return (b);
+	return (nb);
 }
 /*
 #include<stdio.h>
-#include<string.h>
 
 int	main(void)
 {
-	char	str[] = "hola mundo";
+	int nb;
 
-	printf("%s\n", ft_memset(str, '-', 3));
-	printf("%s\n", memset(str, '-', 3));
+	nb = 5;
+	printf("%d",ft_iterative_factorial(nb));
 	return (0);
 }
 */

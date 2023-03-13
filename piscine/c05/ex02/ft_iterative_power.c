@@ -1,40 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 13:59:00 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/12 21:23:19 by daviles-         ###   ########.fr       */
+/*   Created: 2023/02/23 01:13:13 by daviles-          #+#    #+#             */
+/*   Updated: 2023/02/23 13:52:53 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	*ft_memset(void *b, int c, int len)
-{
-	unsigned char	value;
-	int				count;
-	char	*ptr;
+#include<unistd.h>
 
-	ptr = b;
-	value = c;
-	count = 0;
-	while (ptr[count] != '\0' && count < len)
-	{
-		ptr[count] = value;
-		count++;
-	}
-	return (b);
+int	ft_iterative_power(int nb, int power)
+{
+	int	result;
+
+	result = 1;
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	else if (power == 1)
+		return (nb);
+	while (power >= 1)
+	{	
+		result *= nb;
+		power--;
+	}	
+	return (result);
 }
 /*
 #include<stdio.h>
-#include<string.h>
 
 int	main(void)
 {
-	char	str[] = "hola mundo";
+	int	nb;
+	int	power;
 
-	printf("%s\n", ft_memset(str, '-', 3));
-	printf("%s\n", memset(str, '-', 3));
+	nb = 5;
+	power = 3;
+	printf("%d",ft_iterative_power(nb, power));
 	return (0);
 }
 */

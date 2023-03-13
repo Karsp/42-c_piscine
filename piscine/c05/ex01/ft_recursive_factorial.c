@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 13:59:00 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/12 21:23:19 by daviles-         ###   ########.fr       */
+/*   Created: 2023/02/23 00:01:40 by daviles-          #+#    #+#             */
+/*   Updated: 2023/02/23 13:48:04 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	*ft_memset(void *b, int c, int len)
-{
-	unsigned char	value;
-	int				count;
-	char	*ptr;
+#include<unistd.h>
 
-	ptr = b;
-	value = c;
-	count = 0;
-	while (ptr[count] != '\0' && count < len)
-	{
-		ptr[count] = value;
-		count++;
-	}
-	return (b);
+int	ft_recursive_factorial(int nb)
+{
+	if (nb > 1)
+		return (nb * ft_recursive_factorial(nb - 1));
+	else if (nb >= 0)
+		return (1);
+	return (0);
 }
 /*
 #include<stdio.h>
-#include<string.h>
 
 int	main(void)
 {
-	char	str[] = "hola mundo";
+	int nb;
 
-	printf("%s\n", ft_memset(str, '-', 3));
-	printf("%s\n", memset(str, '-', 3));
+	nb = 5;
+	printf("%d",ft_recursive_factorial(nb));
 	return (0);
 }
 */

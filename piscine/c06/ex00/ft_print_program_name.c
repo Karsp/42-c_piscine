@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 13:59:00 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/12 21:23:19 by daviles-         ###   ########.fr       */
+/*   Created: 2023/02/21 18:55:49 by daviles-          #+#    #+#             */
+/*   Updated: 2023/02/21 19:04:00 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	*ft_memset(void *b, int c, int len)
-{
-	unsigned char	value;
-	int				count;
-	char	*ptr;
+#include<unistd.h>
 
-	ptr = b;
-	value = c;
+int	main(int argc, char **argv)
+{
+	int	count;
+
 	count = 0;
-	while (ptr[count] != '\0' && count < len)
+	if (argc >= 1)
 	{
-		ptr[count] = value;
-		count++;
+		while (argv[0][count] != '\0')
+		{
+			write(1, &argv[0][count], 1);
+			count++;
+		}
+		write(1, "\n", 1);
 	}
-	return (b);
-}
-/*
-#include<stdio.h>
-#include<string.h>
-
-int	main(void)
-{
-	char	str[] = "hola mundo";
-
-	printf("%s\n", ft_memset(str, '-', 3));
-	printf("%s\n", memset(str, '-', 3));
 	return (0);
 }
-*/
