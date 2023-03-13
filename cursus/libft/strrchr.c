@@ -6,29 +6,28 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 18:55:12 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/12 20:07:22 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/03/13 19:26:05 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include"libft.h"
 
-char	*ft_strrchr(char *str, int cc)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	c;
 	int		count;
 	int		found;
 
-	c = cc;
 	count = 0;
 	found = 0;
-	while (str[count] != '\0')
+	while (((char *) s)[count] != '\0')
 	{
-		if (str[count] == c)
+		if (((char *) s)[count] == ((char) c))
 			found = count;
 		count++;
 	}
-	if (c == '\0')
-		return (&str[count]);
+	if (((char) c) == '\0')
+		return (&((char *) s)[count]);
 	if (found != 0)
-		return (&str[found]);
+		return (&((char *) s)[found]);
 	return (0);
 }
 /*

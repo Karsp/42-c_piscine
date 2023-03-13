@@ -6,20 +6,21 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 19:19:07 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/09 19:30:40 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/03/13 19:09:37 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include"libft.h"
 
-void	ft_bzero(char *str, int size)
+void	ft_bzero(char *s, size_t n)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
-	if (size != 0)
+	if (n != 0)
 	{
-		while (str[count] != '\0' && count < size)
+		while (s[count] != '\0' && count < n)
 		{
-			str[count] = '\0';
+			s[count] = '\0';
 			count++;
 		}
 	}
@@ -33,7 +34,7 @@ int	main(void)
 	char	str[] = "lalolanda";
 	int		size;
 
-	size = 0;
+	size = 4;
 	ft_bzero(str, size);
 //	bzero(str, size);
 	printf("%s\n", str);	

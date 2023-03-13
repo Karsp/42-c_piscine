@@ -6,16 +6,20 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 13:15:29 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/08 13:22:58 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/03/13 19:09:50 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include"libft.h"
 
-int	ft_isalpha(unsigned char c);
-int	ft_isdigit(unsigned char c);
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
 
-int	ft_isalnum(unsigned char c)
+int	ft_isalnum(int c)
 {
-	if (ft_isdigit(c) == 1 || ft_isalpha(c) == 1)
+	unsigned char	cc;
+
+	cc = c;
+	if (ft_isdigit(cc) == 1 || ft_isalpha(cc) == 1)
 		return (1);
 	else
 		return (0);

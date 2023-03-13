@@ -6,29 +6,17 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:13:26 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/09 19:04:56 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/03/13 19:09:59 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include"libft.h"
 
-int	ft_isupper(char c)
+int	ft_isalpha(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	else
-		return (0);
-}
+	unsigned char	cc;
 
-int	ft_islower(char c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	else
-		return (0);
-}
-
-int	ft_isalpha(unsigned char c)
-{
-	if (ft_isupper(c) || ft_islower(c))
+	cc = c;
+	if ((cc >= 'A' && cc <= 'Z') || (cc >= 'a' && cc <= 'z'))
 		return (1);
 	else
 		return (0);
@@ -42,7 +30,7 @@ int	main(void)
 {
 	char	c;
 	
-	c = 123;
+	c = 70;
 	printf("%d\n", ft_isalpha(c));
 	printf("%d\n", isalpha(c));
 	return (0);

@@ -1,43 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memchr.c                                           :+:      :+:    :+:   */
+/*   strlcpy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 20:43:40 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/13 19:10:50 by daviles-         ###   ########.fr       */
+/*   Created: 2023/03/13 00:07:04 by daviles-          #+#    #+#             */
+/*   Updated: 2023/03/13 19:29:20 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	size_t				count;
+	size_t	count;
+	size_t	len;
 
 	count = 0;
-	while (((char *) s)[count] != '\0' && count < n)
+	len = 0;
+	while (src[len] != '\0')
+		len++;
+	if (dstsize != 0 && len >= dstsize)
 	{
-		if (((char *) s)[count] == ((unsigned char) c))
-			return (&((char *) s)[count]);
-		count++;
+		while (src[count] != '\0' && count < dstsize)
+		{
+			dst[count] = src[count];
+			count++;
+		}
+		dst[count] = '\0';
 	}
-	return (0);
+	return (len);
 }
 /*
-#include<stdio.h>
 #include<string.h>
 
 int	main(void)
 {
-	char	s[] = "Como mola";
-	int		c;
-	int		n;
+	char	src[] = "code breaker";
+	char	dst[20];
+	int		dstsize;
 
-	c =111; 
-	n = 3;
-	printf("%s\n", ft_memchr(s, c, n));
-	printf("%s\n", memchr(s, c, n));
+	dstsize = 4;
+	printf("%lu\n", ft_strlcpy(dst, src, dstsize));
+	printf("%lu\n", strlcpy(dst, src, dstsize));
 	return (0);
 }
 */

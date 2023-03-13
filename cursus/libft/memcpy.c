@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memchr.c                                           :+:      :+:    :+:   */
+/*   memcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 20:43:40 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/13 19:10:50 by daviles-         ###   ########.fr       */
+/*   Created: 2023/03/12 21:36:35 by daviles-          #+#    #+#             */
+/*   Updated: 2023/03/13 19:10:56 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	size_t				count;
+	const char	*str;
+	size_t		count;
 
+	str = src;
 	count = 0;
-	while (((char *) s)[count] != '\0' && count < n)
+	while (str[count] != '\0' && count < n)
 	{
-		if (((char *) s)[count] == ((unsigned char) c))
-			return (&((char *) s)[count]);
+		((char *) dst)[count] = str[count];
 		count++;
 	}
-	return (0);
+	return (dst);
 }
 /*
 #include<stdio.h>
@@ -30,14 +31,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 int	main(void)
 {
-	char	s[] = "Como mola";
-	int		c;
+	char	str[] = "me gusta madrid";
+	char	dst[20];
 	int		n;
 
-	c =111; 
-	n = 3;
-	printf("%s\n", ft_memchr(s, c, n));
-	printf("%s\n", memchr(s, c, n));
+	n = 8;
+	printf("%s\n", ft_memcpy(dst, str, n));
+	printf("%s\n", memcpy(dst, str, n));
 	return (0);
 }
 */

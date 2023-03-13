@@ -6,11 +6,10 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:20:02 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/08 14:32:55 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/03/13 19:27:45 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include<unistd.h>
+#include"libft.h"
 
 int	ft_toupper(int c)
 {
