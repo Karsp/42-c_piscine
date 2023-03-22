@@ -6,12 +6,12 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 00:07:04 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/13 19:29:20 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/03/22 19:07:34 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	count;
 	size_t	len;
