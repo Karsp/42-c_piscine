@@ -1,42 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   tolower.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 13:59:00 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/13 19:11:24 by daviles-         ###   ########.fr       */
+/*   Created: 2023/03/09 18:29:42 by daviles-          #+#    #+#             */
+/*   Updated: 2023/03/23 20:09:07 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
+//The tolower() function converts an upper-case letter to the 
+//corresponding lower-case letter.
 
-void	*ft_memset(void *str, int value, size_t size)
+int	ft_tolower(int c)
 {
-	unsigned char	c;
-	size_t			count;
-	char			*ptr;
-
-	ptr = str;
-	c = value;
-	count = 0;
-	while (ptr[count] != '\0' && count < size)
-	{
-		ptr[count] = c;
-		count++;
-	}
-	return (str);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }
-/*
-#include<stdio.h>
-#include<string.h>
-
-int	main(void)
-{
-	char	str[] = "hola mundo";
-
-	printf("%s\n", ft_memset(str, '-', 0));
-	printf("%s\n", memset(str, '-', 0));
-	return (0);
-}
-*/

@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalnum.c                                          :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 13:15:29 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/13 19:09:50 by daviles-         ###   ########.fr       */
+/*   Created: 2023/04/01 21:52:02 by daviles-          #+#    #+#             */
+/*   Updated: 2023/04/01 21:57:59 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
+//Envía la string ’s’ al file descriptor dado, seguido de un salto de línea.
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-
-int	ft_isalnum(int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	unsigned char	cc;
+	int	c;
 
-	cc = c;
-	if (ft_isdigit(cc) == 1 || ft_isalpha(cc) == 1)
-		return (1);
-	else
-		return (0);
+	c = 0;
+	while (s[c] != '\0')
+	{
+		write(fd, &s[c], 1);
+		c++;
+	}
+	write(fd, "\n", 1);
 }
 /*
-#include<stdio.h>
-#include<ctype.h>
-
 int	main(void)
 {
-	unsigned char	c;
-	
-	c = 62;
-	printf("%d\n", ft_isalnum(c));
-	printf("%d\n", isalnum(c));
+	char	s[] = "Hiroshima mon amour.";
+	int		fd;
+
+	fd = 1;
+	ft_putendl_fd(s, fd);
 	return (0);
 }
 */

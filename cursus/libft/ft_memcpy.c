@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   memcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 19:19:07 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/13 19:09:37 by daviles-         ###   ########.fr       */
+/*   Created: 2023/03/12 21:36:35 by daviles-          #+#    #+#             */
+/*   Updated: 2023/03/24 15:59:43 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
 
-void	ft_bzero(char *s, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	count;
+	size_t		count;
 
 	count = 0;
-	if (n != 0)
+	if (((char *) src) == '\0' && ((char *) dst) == '\0')
+		return (0);
+	while (count < n)
 	{
-		while (s[count] != '\0' && count < n)
-		{
-			s[count] = '\0';
-			count++;
-		}
+		((char *) dst)[count] = ((char *) src)[count];
+		count++;
 	}
+	return (dst);
 }
 /*
-#include<stdio.h>
-#include<string.h>
-
 int	main(void)
 {
-	char	str[] = "lalolanda";
-	int		size;
+	char	str[] = "me gusta madrid";
+	char	dst[0];
+	int		n;
 
-	size = 4;
-	ft_bzero(str, size);
-//	bzero(str, size);
-	printf("%s\n", str);	
+	n = 8;
+	printf("%s\n", ft_memcpy(((void *)0), ((void *)0), 3));
+//	printf("%s\n", memcpy((void *)0), ((void *)0), 3);
 	return (0);
 }
 */

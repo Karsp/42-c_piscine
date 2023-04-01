@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 18:35:47 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/13 19:27:31 by daviles-         ###   ########.fr       */
+/*   Created: 2023/04/01 21:14:11 by daviles-          #+#    #+#             */
+/*   Updated: 2023/04/01 21:46:41 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
+//Envía el carácter ’c’ al file descriptor especificado.
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	int		count;
-
-	count = 0;
-	while (((char *) s)[count] != '\0')
-	{
-		if (((char *) s)[count] == ((char) c))
-			return (&((char *) s)[count]);
-		count++;
-	}
-	if (c == '\0')
-		return (&((char *) s)[count]);
-	return (0);
+	write(fd, &c, 1);
 }
 /*
-#include<stdio.h>
-#include<string.h>
-
 int	main(void)
 {
-	char	str[] = "hola mundo";
-	int	c;
+	char	c;
+	int fd;
 
-	c = 98;
-	printf("%s\n", ft_strchr(str, c));
-	printf("%s\n", strchr(str, c));
+	fd = 1;
+	c = 'A';
+	ft_putchar_fd(c, fd);
 	return (0);
-}
+}	
 */

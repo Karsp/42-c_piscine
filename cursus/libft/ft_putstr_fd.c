@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isascii.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 13:33:25 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/13 19:10:07 by daviles-         ###   ########.fr       */
+/*   Created: 2023/04/01 21:46:49 by daviles-          #+#    #+#             */
+/*   Updated: 2023/04/01 21:53:51 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
+//Envía la string ’s’ al file descriptor especificado
 
-int	ft_isascii(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned char	cc;
+	int	c;
 
-	cc = c;
-	if (cc >= 0 && cc <= 127)
-		return (1);
-	else
-		return (0);
+	c = 0;
+	while (s[c] != '\0')
+	{
+		write(fd, &s[c], 1);
+		c++;
+	}
 }
 /*
-#include<stdio.h>
-#include<ctype.h>
-
 int	main(void)
 {
-	unsigned char	c;
-	
-	c = 200;
-	printf("%d\n", ft_isascii(c));
-	printf("%d\n", isascii(c));
+	char	s[] = "52 amantes a través del espejo\n";
+	int		fd = 1;
+
+	ft_putstr_fd(s, fd);
 	return (0);
 }
 */

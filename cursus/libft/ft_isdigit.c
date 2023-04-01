@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tolower.c                                          :+:      :+:    :+:   */
+/*   isdigit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 18:29:42 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/13 19:27:16 by daviles-         ###   ########.fr       */
+/*   Created: 2023/03/08 12:47:04 by daviles-          #+#    #+#             */
+/*   Updated: 2023/03/23 20:05:11 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
+//The isdigit() function tests for a decimal digit character.
 
-int	ft_tolower(int c)
+int	ft_isdigit(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }
-/*
-#include<stdio.h>
-#include<ctype.h>
-
-int	main(void)
-{
-	int	c;
-
-	c = 66;
-	printf("%d\n", ft_tolower(c));
-	printf("%d\n", tolower(c));
-	return (0);
-}
-*/

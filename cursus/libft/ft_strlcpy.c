@@ -6,10 +6,12 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 00:07:04 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/22 19:07:34 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/03/24 17:35:34 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
+//copies up to dstsize - 1 characters from the string src to dst,
+// NUL-terminating the result if dstsize is not 0. returns the length of src.
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -18,22 +20,20 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	count = 0;
 	len = 0;
-	while (src[len] != '\0')
+	while (((char *) src)[len] != '\0')
 		len++;
-	if (dstsize != 0 && len >= dstsize)
+	if (dstsize != 0)
 	{
-		while (src[count] != '\0' && count < dstsize)
+		while (((char *) src)[count] != '\0' && count < dstsize - 1)
 		{
-			dst[count] = src[count];
+			((char *) dst)[count] = ((char *) src)[count];
 			count++;
 		}
-		dst[count] = '\0';
+		((char *) dst)[count] = '\0';
 	}
 	return (len);
 }
 /*
-#include<string.h>
-
 int	main(void)
 {
 	char	src[] = "code breaker";

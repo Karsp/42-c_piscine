@@ -6,36 +6,37 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 16:14:23 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/22 19:24:40 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/03/24 20:38:37 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
+//The memcmp() function compares byte string s1 against byte string s2.
+// Both strings are assumed to be n bytes long.The memcmp() function returns 
+// zero if the two strings are identical, otherwise returns the difference 
+// between the first two. Zero-length strings are always identical.
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t		c;
-	const char	st1;
 
 	c = 0;
-	while (((const char *) s1[c] != '\0' || (const char *) \
-				s2[c] != '\0') && c < n)
+	while (c < n)
 	{
-		if ((char *) s1[c] != (char *) s2[c])
-			return ((char *) s1[c] - (char *) s2[c]);
+		if (((unsigned char *) s1)[c] != ((unsigned char *) s2)[c])
+			return (((unsigned char *) s1)[c] - ((unsigned char *) s2)[c]);
 		c++;
 	}
-	return ((char *) s1[c] - (char *) s2[c]);
+	return (0);
 }
 /*
-#include<stdio.h>
 
 int	main(void)
 {
-	char	s1 [] = "Geek in the pink";
-	char	s2 [] = "Geek in the scene";
+	char	s1 [] = "t\200";
+	char	s2 [] = "t\0";
 	size_t	n;
 
-	n = 6;
+	n = 2;
 	printf("%d\n", ft_memcmp(s1, s2, n));
 	printf("%d\n", memcmp(s1, s2, n));
 	return (0);

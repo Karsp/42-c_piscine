@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                           :+:      :+:    :+:   */
+/*   memset.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 21:36:35 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/22 17:33:22 by daviles-         ###   ########.fr       */
+/*   Created: 2023/03/08 13:59:00 by daviles-          #+#    #+#             */
+/*   Updated: 2023/03/24 15:45:24 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
+//The memset() function writes len bytes of value c (converted to an unsigned
+// char) to the string b. The memset() function returns its first argument.
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memset(void *b, int c, size_t size)
 {
-	const char	*str;
 	size_t		count;
 
-	str = src;
 	count = 0;
-	while (str[count] != '\0' && count < n)
+	if (size < 1)
+		return (b);
+	while (count < size)
 	{
-		((char *) dst)[count] = str[count];
+		((char *) b)[count] = (unsigned char) c;
 		count++;
 	}
-	return (dst);
+	return (b);
 }
 /*
-#include<stdio.h>
-#include<string.h>
-
 int	main(void)
 {
-	char	str[] = "me gusta madrid";
-	char	dst[20];
-	int		n;
+	char	str[] = "hola mundo";
 
-	n = 8;
-	printf("%s\n", ft_memcpy(dst, str, n));
-	printf("%s\n", memcpy(dst, str, n));
+//	printf("%s\n", ft_memset(str, 'A', 0));
+	printf("%s\n", memset(str, 'A', 0));
 	return (0);
 }
 */

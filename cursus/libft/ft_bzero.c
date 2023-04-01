@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isprint.c                                          :+:      :+:    :+:   */
+/*   bzero.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 13:38:00 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/13 19:10:39 by daviles-         ###   ########.fr       */
+/*   Created: 2023/03/09 19:19:07 by daviles-          #+#    #+#             */
+/*   Updated: 2023/03/24 15:07:15 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
+// The bzero() function writes n zeroed bytes to the
+// string s.  If n is zero, bzero() does nothing.
 
-int	ft_isprint(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	cc;
+	size_t	count;
 
-	cc = c;
-	if (cc >= 32 && cc <= 126)
-		return (1);
-	else
-		return (0);
+	count = 0;
+	while (count < n)
+	{
+		((char *) s)[count] = '\0';
+		count++;
+	}
 }
 /*
 #include<stdio.h>
-#include<ctype.h>
+#include<string.h>
 
 int	main(void)
 {
-	unsigned char	c;
+	char	str[] = "lalolanda";
+	int		size;
 
-	c = 31;
-	printf("%d\n", ft_isprint(c));
-	printf("%d\n", isprint(c));
+	size = 4;
+	ft_bzero(str, size);
+//	bzero(str, size);
+	printf("%s\n", str);	
 	return (0);
 }
 */

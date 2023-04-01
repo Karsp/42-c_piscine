@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   isprint.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 17:31:23 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/09 19:04:09 by daviles-         ###   ########.fr       */
+/*   Created: 2023/03/08 13:38:00 by daviles-          #+#    #+#             */
+/*   Updated: 2023/03/23 20:06:17 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
-#include<string.h>
-#include<ctype.h>
-#include<unistd.h>
-#include"libmylib.a"
+#include"libft.h"
+//The isprint() function tests for any printing character, including space
+// (` ').The isprint() function returns zero if the character tests 
+// false and returns non-zero if the character tests true.
 
-int	main(void)
+int	ft_isprint(int c)
 {
-	char	c;
-
-	c = 123;
-	printf("%d\n", ft_isalpha(c));
-	printf("%d\n", isalpha(c));
-	return (0);
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
+		return (0);
 }

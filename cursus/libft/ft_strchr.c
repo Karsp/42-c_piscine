@@ -1,43 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memchr.c                                           :+:      :+:    :+:   */
+/*   strchr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 20:43:40 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/13 19:10:50 by daviles-         ###   ########.fr       */
+/*   Created: 2023/03/09 18:35:47 by daviles-          #+#    #+#             */
+/*   Updated: 2023/03/24 14:48:47 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
+//The strchr() function locates the first occurrence of c (converted to a 
+//char) in the string pointed to by s.  The terminating null character is
+// considered to be part of the string; therefore if c is `\0', the functions
+// locate the terminating `\0'.
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t				count;
+	int		count;
 
 	count = 0;
-	while (((char *) s)[count] != '\0' && count < n)
+	while (((char *) s)[count] != '\0')
 	{
-		if (((char *) s)[count] == ((unsigned char) c))
+		if (((char *) s)[count] == ((char) c))
 			return (&((char *) s)[count]);
 		count++;
 	}
+	if ((char) c == '\0')
+		return (&((char *) s)[count]);
 	return (0);
 }
 /*
-#include<stdio.h>
-#include<string.h>
-
 int	main(void)
 {
-	char	s[] = "Como mola";
+	char	s[] = "hola";
 	int		c;
-	int		n;
 
-	c =111; 
-	n = 3;
-	printf("%s\n", ft_memchr(s, c, n));
-	printf("%s\n", memchr(s, c, n));
+	c = 0;
+	printf("%s\n", ft_strchr(s, c));
+//	printf("%s\n", strchr(s, c));
 	return (0);
 }
 */
