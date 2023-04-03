@@ -6,7 +6,7 @@
 #    By: daviles- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 17:55:22 by daviles-          #+#    #+#              #
-#    Updated: 2023/04/01 21:58:50 by daviles-         ###   ########.fr        #
+#    Updated: 2023/04/02 16:27:11 by daviles-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,16 @@ SRC = ft_isprint.c \
 	  ft_putstr_fd.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c
+BSRC = ft_lstnew_bonus.c \
+	   ft_lstadd_front_bonus.c \
+	   ft_lstsize_bonus.c \
+	   ft_lstlast_bonus.c \
+	   ft_lstadd_back_bonus.c \
+	   ft_lstdelone_bonus.c \
+	   ft_lstclear_bonus.c \
+	   ft_lstiter_bonus.c \
+	   ft_lstmap_bonus.c
+BOBJ = $(BSRC:.c=.o)
 NAME = libft.a
 LIB = ar rcs
 RM = rm -f
@@ -66,7 +76,12 @@ clean :
 
 fclean : clean
 	$(RM) $(NAME)
+	$(RM) $(BOBJ)
 
 re : fclean all
 
-.PHONY : all NAME clean fclean re
+bonus :	$(OBJ) $(BOBJ) $(INCLUDE)
+	$(LIB) $(NAME) $(OBJ) $(BOBJ)
+	ranlib $(NAME)
+
+.PHONY : all NAME clean fclean re bonus
