@@ -6,7 +6,7 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:46:50 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/05 14:47:35 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/05 20:03:32 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
@@ -72,7 +72,7 @@ char	*ft_itoa(int n)
 		size = ft_sizeint(n);
 	str = (char *) ft_calloc (size + 1, 1);
 	if (!str)
-		return (free(str), NULL);
+		return (NULL);
 	if (sign)
 		str[0] = '-';
 	if (sign == 2)
