@@ -6,7 +6,7 @@
 #    By: daviles- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 17:55:22 by daviles-          #+#    #+#              #
-#    Updated: 2023/04/05 16:11:37 by daviles-         ###   ########.fr        #
+#    Updated: 2023/04/05 17:02:49 by daviles-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,12 +66,13 @@ all : $(NAME)
 
 $(NAME) : $(OBJ) $(INCLUDE)
 	$(LIB) $(NAME) $(OBJ)
+	$(AR) -r $(NAME) $?
 
 bonus :	$(OBJ) $(BOBJ) 
+	$(AR) -r $(NAME) $?
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
-	ranlib $(NAME)
 
 clean :
 	$(RM) $(OBJ) 
@@ -82,5 +83,6 @@ fclean : clean
 
 re : fclean all
 
-bonus :	$(OBJ) $(BOBJ) 
-.PHONY : all NAME clean fclean re bonus
+rebonus :	fclean bonus 
+
+.PHONY : all NAME clean fclean re bonus rebonus
