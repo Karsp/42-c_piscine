@@ -6,12 +6,15 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 20:47:59 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/29 20:17:01 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:00:28 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
+//Elimina todos los caracteres de la string ’set’ desde el principio y desde 
+//el final de ’s1’, hasta encontrar un caracter no perteneciente a ’set’. 
+//La string resultante se devuelve con una reserva de malloc(3)
 
-int	ft_settrue(char const *s1, char const *set, size_t c)
+static int	ft_settrue(char const *s1, char const *set, size_t c)
 {
 	size_t	i;
 

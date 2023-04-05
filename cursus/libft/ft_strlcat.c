@@ -6,11 +6,11 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 19:36:42 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/23 23:22:49 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/05 15:41:39 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//strlcat() appends string src to the end of dst. It will append at most 
+//Appends string src to the end of dst. It will append at most 
 //dstsize - strlen(dst) - 1 characters.  It will then NUL-terminate, unless 
 //dstsize is 0 or the original dst string was longer than dstsize (in 
 //practice this should not     happen as it means that either dstsize is 
