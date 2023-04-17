@@ -6,14 +6,14 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 16:27:21 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/03 23:14:03 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:28:48 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Itera la lista ’lst’ y aplica la función ’f’ al contenido de cada nodo. Crea
-// una lista resultante de la aplicación correcta y sucesiva de la función ’f’
-//  sobre cada nodo. La función ’del’ se utiliza para eliminar el contenido de
-//  un nodo, si hace falta.
+//Iterates through the ’lst’ list and applies the ’f’ function to the contents 
+//of each node. Create a list resulting from the correct and successive 
+//application of the function 'f' on each node. The ’del’ function is used 
+//to remove the contents of a node, if necessary.
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

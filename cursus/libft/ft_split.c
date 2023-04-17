@@ -6,14 +6,13 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 20:17:15 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/30 21:48:31 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 21:56:13 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Reserva (utilizando malloc(3)) un array de strings resultante de separar la 
-//string ’s’ en substrings utilizando el caracter ’c’ como delimitador. El 
-//array debe terminar con un puntero NULL. return El array de nuevas strings 
-//resulatente de la separación. NULL si falla la reserva de memoria.
+//Reserve (using malloc(3)) an array of strings resulting from splitting the 
+//string ’s’ into substrings using the ’c’ character as delimiter. The array 
+//must end with a NULL pointer.
 
 static int	ft_isstart(char const *s, char c, int start)
 {

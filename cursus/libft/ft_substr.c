@@ -6,13 +6,12 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:07:12 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/03 23:34:46 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/05 22:37:41 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Reserva (con malloc(3)) y devuelve una substring de la string ’s’. 
-//La substring empieza desde el índice ’start’ y tiene una longitud 
-//máxima ’len’.
+//Save (with malloc(3)) and return a substring of the string 's'. The substring 
+//starts from index ’start’ and has a maximum length 'len'.
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

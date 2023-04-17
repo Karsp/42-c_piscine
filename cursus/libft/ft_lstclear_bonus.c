@@ -6,13 +6,13 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 15:45:51 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/03 23:02:18 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:26:43 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Elimina y libera el nodo ’lst’ dado y todos los consecutivos de ese nodo,
-// utilizando la función ’del’ y free(3). Al final, el puntero a la lista 
-// debe ser NULL.
+//Removes and frees the given ’lst’ node and all consecutive nodes of that 
+//node, using the ’del’ function and free(3). At the end, the pointer to the 
+//list must be NULL.
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {

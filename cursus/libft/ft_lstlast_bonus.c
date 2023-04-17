@@ -6,11 +6,11 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 12:09:51 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/02 12:47:28 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:24:30 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Devuelve el último nodo de la lista.
+//Returns the last node in the list.
 
 t_list	*ft_lstlast(t_list *lst)
 {

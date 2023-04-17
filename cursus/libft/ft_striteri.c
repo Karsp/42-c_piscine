@@ -6,13 +6,13 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 20:54:25 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/01 21:13:39 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:21:18 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//A cada carácter de la string ’s’, aplica la función ’f’ dando como parámetros 
-//el índice de cada carácter dentro de ’s’ y la dirección del propio carácter, 
-//que podrá modificarse si es necesario.
+//To each character of the string ’s’, apply the function ’f’ giving as 
+//parameters the index of each character within ’s’ and the address of the 
+//character itself character, which can be modified if necessary.
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

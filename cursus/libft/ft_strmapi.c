@@ -6,15 +6,13 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 18:25:15 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/01 19:34:51 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/05 22:48:22 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//A cada carácter de la string ’s’, aplica la función ’f’ dando como parámetros
-// el índice de cada carácter dentro de ’s’ y el propio carácter. 
-// Genera una nueva string con el resultado del uso sucesivo de ’f’.
-//Return:  La string creada tras el correcto uso de ’f’ sobre cada carácter. 
-//  NULL si falla la reserva de memoria.
+//To each character of the string ’s’, apply the function ’f’ giving as 
+//parameters the index of each character inside ’s’ and the character itself. 
+//Generate a new string with the result of successive use of 'f'
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

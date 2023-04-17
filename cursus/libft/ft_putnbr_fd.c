@@ -6,11 +6,11 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 21:58:16 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/01 22:12:12 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:18:17 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Envía el número ’n’ al file descriptor dado.
+//Sends the number ’n’ to the given file descriptor.
 
 void	ft_putnbr_fd(int n, int fd)
 {

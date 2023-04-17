@@ -6,11 +6,12 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 16:15:36 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/03 21:03:44 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:27:28 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Itera la lista ’lst’ y aplica la función ’f’ en el contenido de cada nodo.
+//iterates the ’lst’ list and applies the ’f’ function on the content of 
+//each node.
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {

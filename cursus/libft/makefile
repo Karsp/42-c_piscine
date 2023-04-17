@@ -6,7 +6,7 @@
 #    By: daviles- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 17:55:22 by daviles-          #+#    #+#              #
-#    Updated: 2023/04/05 17:02:49 by daviles-         ###   ########.fr        #
+#    Updated: 2023/04/06 20:39:03 by daviles-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ BSRC = ft_lstnew_bonus.c \
 	   ft_lstmap_bonus.c
 BOBJ = $(BSRC:.c=.o)
 NAME = libft.a
-LIB = ar rcs
+AR = ar rcs
 RM = rm -f
 OBJ = $(SRC:.c=.o)
 INCLUDE = libft.h
@@ -65,8 +65,8 @@ INCLUDE = libft.h
 all : $(NAME)
 
 $(NAME) : $(OBJ) $(INCLUDE)
-	$(LIB) $(NAME) $(OBJ)
-	$(AR) -r $(NAME) $?
+	$(AR) $(NAME) $(OBJ)
+
 
 bonus :	$(OBJ) $(BOBJ) 
 	$(AR) -r $(NAME) $?
@@ -76,10 +76,11 @@ bonus :	$(OBJ) $(BOBJ)
 
 clean :
 	$(RM) $(OBJ) 
+	$(RM) $(BOBJ)
 
 fclean : clean
 	$(RM) $(NAME)
-	$(RM) $(BOBJ)
+
 
 re : fclean all
 

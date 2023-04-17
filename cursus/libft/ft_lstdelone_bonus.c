@@ -6,13 +6,13 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 14:43:19 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/03 22:25:20 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:25:45 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Toma como parámetro un nodo ’lst’ y libera la memoria del contenido utilizando
-//la función ’del’ dada como parámetro, además de liberar el nodo. La memoria 
-//de ’next’ no debe liberarse.
+//It takes a ’lst’ node as a parameter and frees the memory of the contents 
+//using the ’del’ function given as a parameter, in addition to freeing the 
+//node. The memory of 'next' should not be freed.
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {

@@ -6,11 +6,11 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 21:14:11 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/01 21:46:41 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:20:43 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Envía el carácter ’c’ al file descriptor especificado.
+//Sends the character ’c’ to the specified file descriptor.
 
 void	ft_putchar_fd(char c, int fd)
 {

@@ -6,11 +6,11 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 00:54:45 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/02 01:11:54 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:24:04 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Cuenta el número de nodos de una lista.
+//Counts the number of nodes in a list.
 
 int	ft_lstsize(t_list *lst)
 {

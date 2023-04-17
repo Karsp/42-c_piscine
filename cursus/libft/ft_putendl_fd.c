@@ -6,11 +6,11 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 21:52:02 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/01 21:57:59 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:18:50 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Envía la string ’s’ al file descriptor dado, seguido de un salto de línea.
+//Send the string ’s’ to the given file descriptor, followed by a line break.
 
 void	ft_putendl_fd(char *s, int fd)
 {

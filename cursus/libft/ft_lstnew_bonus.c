@@ -6,13 +6,13 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 00:06:31 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/02 00:12:37 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:22:49 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Crea un nuevo nodo utilizando malloc(3). La variable miembro ’content’ se
-// inicializa con el contenido del parámetro ’content’. La variable ’next’, 
-// con NULL.
+//Create a new node using malloc(3). The ’content’ member variable is 
+//initialized with the content of the ’content’ parameter. The variable 'next', 
+//with NULL.
 
 t_list	*ft_lstnew(void *content)
 {

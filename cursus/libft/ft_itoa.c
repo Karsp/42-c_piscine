@@ -6,13 +6,12 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:46:50 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/05 20:03:32 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/05 22:42:53 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Utilizando malloc(3), genera una string que represente el valor entero 
-//recibido como argumento. Los números negativos tienen que gestionarse.
-//Return:La string que represente el número.NULL si falla la reserva de memoria.
+//Using malloc(3), generate a string that represents the integer value 
+//received as an argument. Negative numbers have to be managed.
 
 static int	ft_sizeint(int n)
 {

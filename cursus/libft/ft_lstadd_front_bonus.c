@@ -6,11 +6,11 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 00:14:24 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/02 00:53:54 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:23:31 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-//Añade el nodo ’new’ al principio de la lista ’lst’.
+//Add the ’new’ node to the beginning of the ’lst’ list.
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
