@@ -6,24 +6,10 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 22:06:04 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/15 23:09:16 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/17 22:12:10 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"get_next_line.h"
-
-int	ft_strposchr(const char *s, int c)
-{
-	int		count;
-
-	count = 0;
-	while (((char *) s)[count] != '\0')
-	{
-		if (((char *) s)[count] == ((char) c))
-			return (count);
-		count++;
-	}
-	return (-1);
-}
 
 void	ft_savewaste(char *buf, char **waste)
 {
@@ -52,13 +38,31 @@ char	*ft_saveline(void *buf)
 	return (rln);
 }
 
+char	*ft_read(char **waste, void *buf, int fd)
+{
+	while (ft_strposchr((char *)buf, '\n') == -1)
+	{
+		ft_savewaste((char *)buf, &*waste);
+		if (read(fd, buf, BUFFER_SIZE) == 0)
+		{
+			ft_savewaste((char *)buf, &*waste);
+			return (NULL);
+		}
+		if (read(fd, buf, BUFFER_SIZE) == -1)
+			return (NULL);
+	}
+	return (buf);
+}
+
 char	*get_next_line(int fd)
 {
-	void		*buf[BUFFER_SIZE + 1];
+	char		*buf;
 	char		*line;
 	static char	*waste;
-	char		*old;
 
+	if (fd <= 0 || BUFFER_SIZE < 1)
+		return (NULL);
+	buf = (char *) ft_calloc (BUFFER_SIZE + 1, 1);
 	if (waste == NULL)
 		waste = (char *) ft_calloc (1, 1);
 	if (ft_strposchr(waste, '\n') != -1)
@@ -67,36 +71,39 @@ char	*get_next_line(int fd)
 		ft_savewaste(waste, &waste);
 		return (line);
 	}
-	read(fd, buf, BUFFER_SIZE);
-	if (!fd || !BUFFER_SIZE)
-		return (NULL);
-	while (ft_strposchr((char *)buf, '\n') == -1)
+	if (ft_read(&waste, buf, fd) == NULL)
 	{
-		old = waste;
-		ft_savewaste((char *)buf, &waste);
 		free(waste);
-		read(fd, buf, BUFFER_SIZE);
+		free(buf);
+		return (NULL);
 	}
 	line = ft_saveline(ft_strjoin(waste, (char *) buf));
 	ft_savewaste((char *)buf, &waste);
 	return (line);
 }
-/*
+/* 
 int	main(void)
 {
 	int		fd;
-	int		c;
+	char	*line = "";
 
 	fd = open("test.txt", O_RDONLY);
-//	fd = 2;
-	c = 1;
-	if (!fd)
-		return (0); 
+//	fd = 8;
+
 	printf("Result 1: %s\n", get_next_line(fd));
 	printf("Result 2: %s\n", get_next_line(fd));
 	printf("Result 3: %s\n", get_next_line(fd));
 	printf("Result 4: %s\n", get_next_line(fd));
 	printf("Result 5: %s\n", get_next_line(fd));
+	printf("Result 6: %s\n", get_next_line(fd));
+	while (line)
+	{
+		line = get_next_line(fd);
+		printf("%s", line);
+		free(line);
+	}
+
+    close(fd);
 	return (0);
 }
 */

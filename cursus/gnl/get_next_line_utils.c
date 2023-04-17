@@ -6,10 +6,24 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 01:17:51 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/15 21:41:50 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/17 21:21:01 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"get_next_line.h"
+
+int	ft_strposchr(const char *s, int c)
+{
+	int		count;
+
+	count = 0;
+	while (((char *) s)[count] != '\0')
+	{
+		if (((char *) s)[count] == (char) c)
+			return (count);
+		count++;
+	}
+	return (-1);
+}
 
 size_t	ft_strlen(const char *s)
 {
