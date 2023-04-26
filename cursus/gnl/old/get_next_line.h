@@ -6,14 +6,14 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 18:42:40 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/25 21:30:23 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/24 18:47:25 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10 
+#  define BUFFER_SIZE 1 
 # endif
 
 # include<stdio.h>
@@ -26,5 +26,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *s);
 char	*get_next_line(int fd);
 void	*ft_calloc(size_t count, size_t size);
-void	ft_bzero(void *s, size_t n);
+int		ft_strposchr(const char *s, int c);
+
 #endif

@@ -6,10 +6,27 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 01:17:51 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/25 22:19:37 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/24 19:31:21 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"get_next_line.h"
+
+int	ft_strposchr(const char *s, int c)
+{
+	int		count;
+
+	count = 0;
+	if (s)
+	{
+		while (((char *) s)[count] != '\0')
+		{
+			if (((char *) s)[count] == (char) c)
+				return (count);
+			count++;
+		}
+	}
+	return (-1);
+}
 
 size_t	ft_strlen(const char *s)
 {
@@ -47,18 +64,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	sub[c] = '\0';
 	return (sub);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	count;
-
-	count = 0;
-	while (count < n)
-	{
-		((char *) s)[count] = '\0';
-		count++;
-	}
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
