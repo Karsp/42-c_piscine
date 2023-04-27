@@ -6,10 +6,19 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 22:06:04 by daviles-          #+#    #+#             */
-/*   Updated: 2023/04/26 19:21:10 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:58:01 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"get_next_line.h"
+
+void	ft_free(char **str)
+{
+	if (*str)
+	{
+		free(*str);
+		*str = NULL;
+	}
+}
 
 int	ft_strposchr(const char *s, int c)
 {
@@ -42,15 +51,14 @@ char	*ft_saveline(char **waste)
 		rln = ft_substr(*waste, 0, to);
 		tmp = *waste;
 		*waste = ft_substr(*waste, to, ft_strlen(*waste));
-		free(tmp);
-		tmp = NULL;
+		ft_free(&tmp);
 	}
 	else
 	{
 		to = ft_strlen(*waste);
 		rln = ft_substr(*waste, 0, to);
-		free(waste);
-		waste = NULL;
+		if (*waste)
+			ft_free(waste);
 	}
 	return (rln);
 }
@@ -69,18 +77,11 @@ int	ft_read(char **waste, int fd)
 		r = read(fd, buf, BUFFER_SIZE);
 		tmp = *waste;
 		*waste = ft_strjoin(*waste, buf);
-		free(tmp);
-		tmp = NULL;
+		ft_free(&tmp);
 	}
+	ft_free(&buf);
 	if (r <= 0)
-	{
-		if (r == 0)
-			*waste = ft_strjoin(*waste, buf);
-		free(buf);
-		buf = NULL;
 		return (0);
-	}
-	free(buf);
 	return (1);
 }
 
@@ -89,21 +90,28 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*waste;
 
-	if (BUFFER_SIZE <= 0 || fd < 0)
+	if (BUFFER_SIZE <= 0 || fd < 0 || read(fd, 0, 0) < 0)
+	{
+		ft_free(&waste);
 		return (0);
+	}
 	if (waste == NULL)
 		waste = (char *) ft_calloc (1, 1);
 	if (ft_strposchr(waste, '\n') == -1)
 	{
 		if (ft_read(&waste, fd) == 0)
 		{
-			free(waste);
-			waste = NULL;
+			if (ft_strlen(waste) > 0)
+			{
+				line = waste;
+				waste = NULL;
+				return (line);
+			}
+			ft_free(&waste);
 			return (0);
 		}
 	}
-	line = ft_saveline(&waste);
-	return (line);
+	return (ft_saveline(&waste));
 }
 /*
 int	main(void)
@@ -114,6 +122,8 @@ int	main(void)
 
 	i = 1;
 	fd = open("test.txt", O_RDONLY);
+	fd = open("/Users/daviles-/francinette/temp/get_next_line/
+			fsoares/1char.txt", O_RDONLY);
 	line = get_next_line(fd);
 	while (line)
 	{
