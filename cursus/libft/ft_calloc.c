@@ -6,7 +6,7 @@
 /*   By: daviles- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:52:41 by daviles-          #+#    #+#             */
-/*   Updated: 2023/03/27 17:31:22 by daviles-         ###   ########.fr       */
+/*   Updated: 2023/05/03 18:18:21 by daviles-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
@@ -39,8 +39,13 @@ int	main(void)
 
 	size = 4;
 	count = 7;
-	ptr = ft_calloc(count, size);
+	ptr = calloc(-1, -1);
+	if (!ptr)
+		printf("Fallo al alocar\n");
+	printf("%s\n", ptr);
+		ptr = ft_calloc(count, size);
 	printf("%s\n", ptr);
 	return(0);
 }
 */
+
